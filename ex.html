@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Information</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 20px;
+    }
+    .card {
+      max-width: 450px;
+      background: white;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #007BFF;
+    }
+    p {
+      font-size: 15px;
+      margin: 8px 0;
+    }
+    span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Product Information</h2>
+
+  <p><span>Name:</span> <span id="name"></span></p>
+  <p><span>Mfg Date:</span> <span id="mfg"></span></p>
+  <p><span>Expiry Date:</span> <span id="expiry"></span></p>
+  <p><span>Batch ID:</span> <span id="batch"></span></p>
+  <p><span>Uses:</span> <span id="uses"></span></p>
+  <p><span>Side Effects:</span> <span id="side"></span></p>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById("name").innerText   = params.get("name")   || "N/A";
+  document.getElementById("mfg").innerText    = params.get("mfg")    || "N/A";
+  document.getElementById("expiry").innerText = params.get("expiry") || "N/A";
+  document.getElementById("batch").innerText  = params.get("batch")  || "N/A";
+  document.getElementById("uses").innerText   = params.get("uses")   || "N/A";
+  document.getElementById("side").innerText   = params.get("side")   || "N/A";
+</script>
+
+</body>
+</html>
